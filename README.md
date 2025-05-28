@@ -1,5 +1,5 @@
 # super_projects
-There're my projects
+There're my projects.
 I'm David and I'm a beginner in C# programming.
 Here're my projects.
 
