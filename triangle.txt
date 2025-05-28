@@ -1,0 +1,64 @@
+using System;
+using System.Threading;
+
+class Triangle
+{
+    static void Main()
+    {
+        Console.WriteLine("Write a height of your triangle: ");
+        int weight = Int32.Parse(Console.ReadLine());
+        int height = 0;
+        Console.WriteLine("");
+
+        Random rnd = new Random();
+        int number;
+
+        if (weight > 0)
+        {
+            for (int i = 0; i < weight; i++)
+            {
+                for (int k = 0; k < i; k++)
+                {
+                    number = rnd.Next(2);
+                    Console.Write(number);
+                    number = rnd.Next(150 );
+                    Thread.Sleep(number);
+                }
+                height++;
+                Console.Write("#");
+                Console.Write(" " + height);
+                number = rnd.Next(150);
+                Thread.Sleep(number);
+                Console.WriteLine("");
+            }
+        }
+        else if (weight < 0)
+        {
+            for (int i = weight; i < 0; i++)
+            {
+                for (int k = 0; k > i; k--)
+                {
+                    number = rnd.Next(2);
+                    Console.Write(number);
+                    number = rnd.Next(150);
+                    Thread.Sleep(number);
+                }
+                height++;
+                Console.Write("#");
+                Console.Write(" " + height);
+                number = rnd.Next(150);
+                Thread.Sleep(number);
+                Console.WriteLine("");
+            }
+            Console.WriteLine("#");
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
+
+        Console.WriteLine("");
+
+        Console.ReadLine();
+    }
+}

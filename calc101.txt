@@ -1,0 +1,71 @@
+using System;
+
+namespace calc101
+{
+    class Calculator
+    {
+        static void Main()
+        {
+        beginning:
+            decimal num1, num2;
+        input:
+            try
+            {
+                Console.WriteLine("Write your first number: ");
+                num1 = Int32.Parse(Console.ReadLine());
+                Console.WriteLine("Write your second number: ");
+                num2 = Int32.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("A number should be put, please, try again...");
+                goto input;
+            }
+
+            decimal[] nums = { num1, num2 };
+
+        choice:
+            Console.WriteLine("Choose an operator \"+\" \"-\" \"*\" or \"/\": ");
+            string op = Console.ReadLine();
+
+            if (op == "")
+            {
+                goto choice;
+            }
+            else
+            {
+                if (op == "+" ||  op == "-" || op == "*" || op == "/")
+                {
+                    try
+                    {
+                        switch (op)
+                        {
+                            case "+":
+                                Console.WriteLine("The result: {0}", nums[0] + nums[1]);
+                                break;
+                            case "-":
+                                Console.WriteLine("The result: {0}", nums[0] / nums[1]);
+                                break;
+                            case "*":
+                                Console.WriteLine("The result: {0}", nums[0] * nums[1]);
+                                break;
+                            case "/":
+                                Console.WriteLine("The result: {0}", nums[0] / nums[1]);
+                                break;
+                        }
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Sorry, but there's an error. Try again please...");
+                        goto beginning;
+                    }
+                }
+                else
+                {
+                    goto choice;
+                }
+
+            }
+        }
+    }
+}
