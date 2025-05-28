@@ -1,4 +1,4 @@
-# super_projects
+# Super projects
 Here're my projects.
 I'm David and I'm a beginner in C# programming.
 
